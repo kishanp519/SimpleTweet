@@ -36,7 +36,6 @@ The following **additional** features are implemented:
 Here's a walkthrough of implemented user stories:
 
 <img src='https://imgur.com/UbCgFC4.gif' title='SimpleTweet Part 2 Walkthrough' width='' alt='SimpleTweet' />
-https://imgur.com/UbCgFC4
 
 GIF created with [LiceCap](http://www.cockos.com/licecap/).
 
