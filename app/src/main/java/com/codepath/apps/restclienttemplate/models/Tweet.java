@@ -16,6 +16,9 @@ public class Tweet {
     private long id;
     private User user;
 
+    public Tweet() {
+    }
+
     public static Tweet fromJSON(JSONObject jsonObject) throws JSONException {
         Tweet tweet = new Tweet();
         tweet.body = jsonObject.getString("text");
@@ -42,7 +45,9 @@ public class Tweet {
         return createdAt;
     }
 
-    public long getId() { return id; }
+    public long getId() {
+        return id;
+    }
 
     public User getUser() {
         return user;

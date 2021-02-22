@@ -5,7 +5,6 @@ import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.Locale;
-import java.util.TimeZone;
 
 /**
  * Given a date String of the format given by the Twitter API, returns a display-formatted
@@ -24,7 +23,7 @@ public class TimeFormatter {
             if (diff < 5)
                 time = "Just now";
             else if (diff < 60)
-                time = String.format(Locale.ENGLISH, "%ds",diff);
+                time = String.format(Locale.ENGLISH, "%ds", diff);
             else if (diff < 60 * 60)
                 time = String.format(Locale.ENGLISH, "%dm", diff / 60);
             else if (diff < 60 * 60 * 24)
@@ -36,15 +35,15 @@ public class TimeFormatter {
                 Calendar then = Calendar.getInstance();
                 then.setTime(format.parse(rawJsonDate));
                 if (now.get(Calendar.YEAR) == then.get(Calendar.YEAR)) {
-                    time = String.valueOf(then.get(Calendar.DAY_OF_MONTH)) + " "
+                    time = then.get(Calendar.DAY_OF_MONTH) + " "
                             + then.getDisplayName(Calendar.MONTH, Calendar.SHORT, Locale.US);
                 } else {
-                    time = String.valueOf(then.get(Calendar.DAY_OF_MONTH)) + " "
+                    time = then.get(Calendar.DAY_OF_MONTH) + " "
                             + then.getDisplayName(Calendar.MONTH, Calendar.SHORT, Locale.US)
-                            + " " + String.valueOf(then.get(Calendar.YEAR) - 2000);
+                            + " " + (then.get(Calendar.YEAR) - 2000);
                 }
             }
-        }  catch (ParseException e) {
+        } catch (ParseException e) {
             e.printStackTrace();
         }
         return time;
@@ -69,7 +68,7 @@ public class TimeFormatter {
 
             time = format1.format(date);
 
-        }  catch (ParseException e) {
+        } catch (ParseException e) {
             e.printStackTrace();
         }
         return time;

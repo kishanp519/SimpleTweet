@@ -11,6 +11,9 @@ public class User {
     private int following, followers;
     private String profileImageURL;
 
+    public User() {
+    }
+
     public static User fromJSON(JSONObject jsonObject) throws JSONException {
         User user = new User();
         user.name = jsonObject.getString("name");
@@ -32,13 +35,21 @@ public class User {
         return handle;
     }
 
-    public String getDescription() { return description; }
+    public String getDescription() {
+        return description;
+    }
 
-    public String getLocation() { return location; }
+    public String getLocation() {
+        return location;
+    }
 
-    public int getFollowing() { return following; }
+    public int getFollowing() {
+        return following;
+    }
 
-    public int getFollowers() { return followers; }
+    public int getFollowers() {
+        return followers;
+    }
 
     public String getProfileImageURL() {
         return profileImageURL;

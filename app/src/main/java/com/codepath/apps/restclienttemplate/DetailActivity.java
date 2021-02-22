@@ -1,13 +1,10 @@
 package com.codepath.apps.restclienttemplate;
 
-import android.content.Context;
 import android.graphics.Typeface;
 import android.os.Bundle;
 import android.text.Html;
 import android.text.method.LinkMovementMethod;
-import android.util.Log;
 import android.widget.ImageView;
-import android.widget.RatingBar;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -15,17 +12,10 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.bumptech.glide.Glide;
 import com.codepath.apps.restclienttemplate.models.Tweet;
 import com.codepath.apps.restclienttemplate.models.User;
-import com.codepath.asynchttpclient.AsyncHttpClient;
-import com.codepath.asynchttpclient.callback.JsonHttpResponseHandler;
 
-import org.json.JSONArray;
-import org.json.JSONException;
 import org.parceler.Parcels;
-import org.w3c.dom.Text;
 
 import java.text.NumberFormat;
-
-import okhttp3.Headers;
 
 public class DetailActivity extends AppCompatActivity {
 
@@ -52,7 +42,7 @@ public class DetailActivity extends AppCompatActivity {
         User user = tweet.getUser();
         tvName.setTypeface(tvName.getTypeface(), Typeface.BOLD);
         tvName.setText(user.getName());
-        tvHandle.setText( "@" + user.getHandle());
+        tvHandle.setText("@" + user.getHandle());
         tvDescription.setMovementMethod(LinkMovementMethod.getInstance());
         tvDescription.setText(Html.fromHtml(user.getDescription()));
 

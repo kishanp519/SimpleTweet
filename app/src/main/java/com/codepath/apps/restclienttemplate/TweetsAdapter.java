@@ -20,13 +20,12 @@ import com.codepath.apps.restclienttemplate.models.Tweet;
 
 import org.parceler.Parcels;
 
-import java.time.format.DateTimeFormatter;
 import java.util.List;
 
 public class TweetsAdapter extends RecyclerView.Adapter<TweetsAdapter.ViewHolder> {
 
-    private Context context;
-    private List<Tweet> tweets;
+    private final Context context;
+    private final List<Tweet> tweets;
 
     public TweetsAdapter(Context context, List<Tweet> tweets) {
         this.context = context;
